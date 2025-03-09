@@ -1,0 +1,424 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+.container {
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/*.container {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+
+/*}*/
+
+.navbar {
+    background-color: #f5f5f5;
+    height: 5rem;
+    border-bottom: 2px solid black !important;
+}
+
+.fa-compass {
+    color: red;
+    font-size: 2rem;
+}
+
+
+/*footer*/
+
+.f-info-socials a {
+    color: black;
+    margin-right: 0.5rem;
+}
+
+.f-info-socials a i:hover {
+    transform: scale(1.1);
+}
+
+.f-info-links a {
+    text-decoration: none;
+    color: black;
+    margin-left: 0.4rem;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+
+.f-info {
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: white;
+
+}
+
+.f-info-socials {
+    display: flex;
+    width: 100%;
+    font-size: 1.3rem;
+    justify-content: center;
+
+}
+
+
+.f-info-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.f-info-company {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+
+h2 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666666;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.sign-up-link{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Index Styling*/
+.listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 28rem));
+    /*grid-auto-rows: minmax(300px, auto);*/
+    justify-content: center;
+    margin-top: 2rem;
+    column-gap: 25px;
+
+
+}
+
+.listItem {
+
+    aspect-ratio: 1/1;
+    margin-bottom: 1rem;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+
+
+}
+
+.listItem:hover {
+    transform: scale(1.1);
+
+
+}
+
+.listItem img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.itemTitle {
+    font-weight: 600;
+    margin-bottom: 0px !important;
+}
+
+.itemLocation {
+    margin-bottom: 0px !important;
+
+}
+
+.itemPrice {
+    margin-bottom: 0px !important;
+    font-weight: 600;
+
+}
+
+.listText {
+    display: flex;
+    flex-direction: column;
+}
+
+.listings a {
+    text-decoration: none;
+    color: black;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+/*show*/
+
+.outerbox {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    width: 40rem;
+
+}
+
+.showimage {
+    height: 25rem;
+    width: 40rem;
+    margin-top: 0.5rem;
+
+}
+
+.showimage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.location {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0.6rem;
+}
+.ownerDetails{
+    height: 40px;
+    display: flex;
+
+ }
+.ownerName{
+    margin: auto 0px auto 10px;
+}
+.ownerImage img{
+    height: 100%;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+.availabilityForm{
+    border: none;
+    border-radius: 15px;
+    padding: 8px;
+    width: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+#availabilityBtn{
+    margin: 4px auto 0px auto;
+    background: linear-gradient(to left, #cc0099 0%, #ff0066 17%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+}
+.inputDate label{
+    width: 150px;
+}
+.inputDate{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 4px;
+}
+.edit {
+    margin-top: 0.5rem;
+}
+
+.delete {
+    margin-top: 0.5rem;
+}
+
+.edit button {
+    border: none;
+    border-radius: 20px;
+    background-color: red;
+    color: white;
+}
+
+.delete button {
+    border: none;
+    border-radius: 20px;
+    background-color: blueviolet;
+    color: white;
+}
+
+.mboxtitle {
+    display: none;
+}
+
+/*!*Profile Page*!*/
+/*.profile{*/
+/*    margin: auto;*/
+/*    padding: 20px;*/
+/*}*/
+
+/*.card img{*/
+/*    width: 40%;*/
+/*    margin: auto;*/
+/*}*/
+/*.card-title{*/
+/*    margin-bottom: 0;*/
+/*}*/
+/*.card-text{*/
+/*    margin-bottom: 0;*/
+/*}*/
+.list-group-item{
+    width: 33.3%;
+    text-align: center;
+}
+.listing-form{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    background-color: whitesmoke;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.listing-form form{
+    border: 2px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    padding: 2rem;
+    border-radius: 3%;
+}
+.listing-form input{
+    width: 40rem;
+    border: 1px solid grey;
+    height: 2rem;
+    border-radius: 10px;
+    padding-left: 0.6rem ;
+
+}
+.listing-form textarea{
+    border: 1px solid grey;
+    margin-top: 0.4rem;
+    border-radius: 10px;
+    padding-left: 0.6rem ;
+}
+
+/*Booking*/
+.bookingBox{
+    margin-top: 50px;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 400px));
+    grid-template-rows: repeat(1, minmax(200px, 300px));
+    padding: 20px;
+    justify-content: center;
+    grid-gap: 30px;
+    padding-top: 70px;
+}
+@media (max-width: 768px) {
+    .bookingBox {
+        margin-top: 50px;
+        min-height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 600px));
+        grid-template-rows: repeat(auto-fill, minmax(300px, auto));
+        padding: 20px;
+        justify-content: center;
+        grid-gap: 30px;
+    }
+}
+.bookingDetails{
+    border: 2px solid black;
+    padding: 10px;
+}
+.priceDetails{
+    border: 2px solid black;
+    padding: 10px;
+}
+.innerBookingDetail{
+    display: flex;
+}
+.innerBookingImage{
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+
+}
+.innerBookingImage img {
+    object-fit: cover;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+
+}
+
+.fxBox{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+#bookingBtn{
+    grid-column: 1 / -1;
+}
+.boxTitle{
+    font-weight: 700;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+#confirmBtn{
+    margin: 4px auto 0px auto;
+    width: 70%;
+    background: linear-gradient(to left, #cc0099 0%, #ff0066 17%);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+
+}
+.titleCase{
+    text-transform: capitalize;
+}
+
+/*Booking Confirmation Page*/
+.confirmBookingBox{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
