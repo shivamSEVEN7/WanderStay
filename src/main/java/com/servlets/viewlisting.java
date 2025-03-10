@@ -7,24 +7,22 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
+import com.connection.DBconnection;
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 @WebServlet("/viewlisting")
 public class viewlisting extends HttpServlet {
-    String user = "root";
-    String pass = "Shivam@123";
-    String url = "jdbc:mysql://localhost:3306/wanderstay";
+
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url, user, pass);
+
+            Connection con = DBconnection.getConnection();
             HttpSession session = req.getSession();
             String listingid = req.getParameter("id");
             session.setAttribute("listing_id", listingid);

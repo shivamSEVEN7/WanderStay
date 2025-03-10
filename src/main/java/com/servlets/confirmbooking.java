@@ -6,24 +6,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import com.connection.DBconnection;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 @WebServlet("/confirmbooking")
 public class confirmbooking extends HttpServlet {
-    String url ="jdbc:mysql://localhost:3306/wanderstay";
-    String user = "root";
-    String pass = "Shivam@123";
-
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url,user,pass);
+            Connection con = DBconnection.getConnection();
             PreparedStatement ps = con.prepareStatement("select booking_id from bookings where listing_id = ? and checkin =?");
             ps.setString(1,req.getParameter("listingID"));
             ps.setString(2,req.getParameter("checkin"));

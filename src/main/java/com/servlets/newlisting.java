@@ -6,18 +6,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
+import com.connection.DBconnection;
 import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
+
 import java.sql.PreparedStatement;
 
 @WebServlet("/listing")
 public class newlisting extends HttpServlet {
-    String url = "jdbc:mysql://localhost:3306/wanderstay";
-    String user = "root";
-    String pass = "Shivam@123";
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,8 +28,7 @@ public class newlisting extends HttpServlet {
         String id = (String) session.getAttribute("user_id");
         System.out.println(id);
        try{
-           Class.forName("com.mysql.cj.jdbc.Driver");
-           Connection con = DriverManager.getConnection(url,user,pass);
+           Connection con = DBconnection.getConnection();
            System.out.println("Connected to database");
            PreparedStatement ps = con.prepareStatement("INSERT INTO listings(title, description, image_url,price, location, country, user_id) VALUES (?,?,?,?,?,?,?)");
            ps.setString(1,title);

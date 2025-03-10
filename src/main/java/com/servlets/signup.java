@@ -1,6 +1,5 @@
 package com.servlets;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -8,14 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.sql.PreparedStatement;
 import java.io.IOException;
+import com.connection.DBconnection;
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.Date;
 @WebServlet("/signup")
 public class signup extends HttpServlet {
-    String url = "jdbc:mysql://localhost:3306/wanderstay";
-    String user = "root";
-    String pass = "Shivam@123";
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("hello");
@@ -34,8 +31,7 @@ public class signup extends HttpServlet {
         Date dob = Date.valueOf(dateString);
         System.out.println(firstName + " " + lastName + " " + gender + " " + dob + " " + username + " " + email + " " + mobile + " " + password + " " + address + " " + city + " " + state + " " + zip);
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url,user,pass);
+            Connection con = DBconnection.getConnection();
             System.out.println("Connected to database");
             PreparedStatement stmnt = con.prepareStatement("insert into users (first_name, last_name, gender, dob, username, mobile, email, password, address, city, state, zip) values(?,?,?,?,?,?,?,?,?,?,?,?)");
             stmnt.setString(1,firstName);

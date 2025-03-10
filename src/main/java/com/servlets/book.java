@@ -6,7 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import com.connection.DBconnection;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,9 +15,6 @@ import java.sql.PreparedStatement;
 
 @WebServlet("/book")
 public class book extends HttpServlet {
-    String url ="jdbc:mysql://localhost:3306/wanderstay";
-    String user = "root";
-    String pass = "Shivam@123";
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String totalAmount = req.getParameter("totalAmount");
@@ -34,8 +31,7 @@ public class book extends HttpServlet {
         System.out.println("ListingId is " + listingId);
         System.out.println("ListingsTitle is " + listingTitle);
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url,user,pass);
+            Connection con = DBconnection.getConnection();
             PreparedStatement ps = con.prepareStatement("INSERT INTO bookings(total_amount, checkin, checkout, user_id, listing_id) VALUES (?,?,?,?,?);");
             ps.setString(1,totalAmount);
             ps.setString(2,checkIn);

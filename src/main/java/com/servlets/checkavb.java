@@ -7,19 +7,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-
+import com.connection.DBconnection;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Date;
 import java.time.LocalDate;
 @WebServlet("/checkavb")
 public class checkavb extends HttpServlet {
-    String url ="jdbc:mysql://localhost:3306/wanderstay";
-    String user = "root";
-    String pass = "Shivam@123";
+
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -36,8 +33,7 @@ public class checkavb extends HttpServlet {
             System.out.println(checkin);
             System.out.println(checkout);
             try{
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection con = DriverManager.getConnection(url,user,pass);
+                Connection con = DBconnection.getConnection();
                 PreparedStatement ps = con.prepareStatement("SELECT * FROM bookings WHERE ((checkin <= ? AND checkout > ?) OR (checkin BETWEEN ? AND ?)) AND listing_id = ?;");
                 PreparedStatement ps2 = con.prepareStatement("SELECT title, user_id, price, image_url FROM listings WHERE listing_id = ?;");
                 ps.setDate(1, checkin);
