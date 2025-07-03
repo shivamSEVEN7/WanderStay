@@ -53,42 +53,10 @@
         <div class="price">&#8377 <%=listing.getString("price")%>
         </div>
         <hr>
-        <div class="ownerDetails">
-            <div class="ownerImage"><img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="">
-            </div>
-            <div class="ownerName">Listed By : Shivam</div>
-        </div>
         <hr>
         <div class="description">
             <%=listing.getString("description")%>
         </div>
-        <% System.out.println("Listing us is " + session.getAttribute("user_id"));
-            System.out.println("Listing id is " + listing.getString("user_id"));%>
-        <% if(!session.getAttribute("user_id").equals(listing.getString("user_id")) ){ %>
-        <div class="availabilityForm">
-            <%if(avlError!=null){ %>
-            <p>NOT AVAILABLE</p>
-            <%};%>
-            <form action="checkavb" method="post">
-                <div class="inputDate">
-                    <label for="checkin">Check-In  </label>
-                    <input type="date" id="checkin" name="checkin" min="<%=today%>">
-                </div>
-                <div class="inputDate">
-                    <label for="checkout">Checkout  </label>
-                    <input type="date" id="checkout" name="checkout" min="<%=today%>">
-                </div>
-                <div class="inputDate">
-                    <label for="guests">Guests  </label>
-                    <input type="number" id="guests" name="guests" min="1" max="8">
-                </div>
-                <button id="availabilityBtn" type="submit">Check Availability</button>
-            </form>
-        </div>
-       <%}else { %>
-        <p>U R THE OWNER</p>
-       <%};%>
     </div>
 </div>
 <%@include file="includes/footer.jsp" %>

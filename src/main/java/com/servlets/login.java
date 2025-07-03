@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 
 @WebServlet("/login")
 public class login extends HttpServlet {
-
+    
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
