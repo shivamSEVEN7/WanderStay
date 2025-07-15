@@ -26,6 +26,10 @@
   <title>WanderStay - Sign Up</title>
 </head>
 <body>
+<% String error = (String) request.getAttribute("error"); %>
+<% if (error != null) { %>
+<div style="color:red;"><%= error %></div>
+<% } %>
   <div id="signup-form">
     <form class="row g-3" action="signup" method="post">
       <div class="col-md-6">

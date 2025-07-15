@@ -15,7 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/login")
+//@WebServlet("/login")
 public class login extends HttpServlet {
     
     @Override

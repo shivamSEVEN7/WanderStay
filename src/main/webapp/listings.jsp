@@ -1,5 +1,6 @@
-<%@ page import="javax.xml.transform.Result" %>
-<%@ page import="java.sql.ResultSet" %>
+
+<%@ page import="com.model.ListingModel" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,22 +33,22 @@
 <%@include file="includes/navbar.jsp"%>
 <body>
 <% String  pageNumber = request.getParameter("page") ;
-    ResultSet rs  = (ResultSet) request.getAttribute("result");
+   List<ListingModel> listings = (List<ListingModel>) request.getAttribute("listings");
 %>
 <%--<div class="container">--%>
     <div class="listings">
-        <% while (rs.next()){ %>
-        <a href="viewlisting?id=<%=rs.getString("listing_id")%>">
+        <% for (ListingModel listing : listings){ %>
+        <a href="viewlisting?id=<%=listing.getListingId()%>">
             <div class="listItem">
-                <img src=<%=rs.getString("image_url")%> alt="listing">
+                <img src="<%=listing.getImageUrl()%>" alt="listing">
                 <div class="listText">
                     <p class="itemTitle">
-                        <%=rs.getString("title")%>
+                        <%=listing.getTitle()%>
                     </p>
                     <p class="itemLocation">
-                        <%=rs.getString("location")%>, <%=rs.getString("country")%>
+                        <%=listing.getLocation()%>, <%=listing.getCountry()%>
                     </p>
-                    <p class="itemPrice"> &#8377 <%=rs.getString("price")%>
+                    <p class="itemPrice"> &#8377 <%=listing.getPrice()%>
                     </p>
                 </div>
             </div>

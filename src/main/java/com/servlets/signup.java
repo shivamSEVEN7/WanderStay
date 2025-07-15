@@ -11,7 +11,7 @@ import com.connection.DBconnection;
 import java.sql.Connection;
 
 import java.sql.Date;
-@WebServlet("/signup")
+//@WebServlet("/signup")
 public class signup extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
